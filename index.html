@@ -31,44 +31,139 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>dk-tw-citySelector</h3>
+        <h3>dk-tw-citySelector</h3>
+
+        <hr>
 
         <p>顯示全部縣市</p>
 
-          <form id="form-1">
-              <select id="county-1" name="county"></select>
-              <select id="district-1" name="district"></select>
-              <input id="zip-1" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
-          </form>
+        <form id="form-1">
+            <select id="county-1" name="county"></select>
+            <select id="district-1" name="district"></select>
+            <input id="zip-1" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+        </form>
 
-          <hr>
+        <hr>
 
-          <p>預設選定值</p>
+        <p>預設選定值</p>
 
-          <form id="form-2">
-              <select id="county-2" name="county" data-selected="台北市"></select>
-              <select id="district-2" name="district" data-selected="中山區"></select>
-              <input id="zip-2" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
-          </form>
+        <form id="form-2">
+            <select id="county-2" name="county" data-selected="台北市"></select>
+            <select id="district-2" name="district" data-selected="中山區"></select>
+            <input id="zip-2" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+        </form>
 
         <p>顯示部分自訂縣市</p>
 
-          <form id="form-3">
-              <select id="county-3" name="county" data-custom="台北市,台中市,高雄市"></select>
-              <select id="district-3" name="district"></select>
-              <input id="zip-3" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
-          </form>
+        <form id="form-3">
+            <select id="county-3" name="county" data-custom="台北市,台中市,高雄市"></select>
+            <select id="district-3" name="district"></select>
+            <input id="zip-3" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+        </form>
 
-          <hr>
+        <hr>
 
-          <p>顯示部分自訂縣市，並預設選定值</p>
+        <p>顯示部分自訂縣市，並預設選定值</p>
 
-          <form id="form-4">
-              <select id="county-4" name="county" data-custom="台北市,台中市,高雄市" data-selected="台中市"></select>
-              <select id="district-4" name="district"></select>
-              <input id="zip-4" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
-          </form>
+        <form id="form-4">
+            <select id="county-4" name="county" data-custom="台北市,台中市,高雄市" data-selected="台中市"></select>
+            <select id="district-4" name="district"></select>
+            <input id="zip-4" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+        </form>
+
+        <hr>
+
+        <h1>dk-tw-citySelector.js</h1>
+
+        <p>台灣縣市地區選單，不需資料庫。</p>
+
+        <h2>安裝</h2>
+
+        <h3>擇一使用下列方式</h3>
+
+        <h4>使用 Bower</h4>
+
+        <p><code>
+        bower install dk-tw-cityselector --save
+        </code></p>
+
+        <p>or</p>
+
+        <h4><a href="https://github.com/dennykuo/dk-tw-citySelector/archive/master.zip">下載檔案</a></h4>
+
+        <h2>使用方式</h2>
+
+        <h3>套件依賴jQuery，在網頁中引入js檔案如下</h3>
+
+        <p>```</p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+        <script src="dk-tw-citySelector.min.js"></script>
+
+
+        <p>```</p>
+
+        <h3>網頁中置入「縣市選單」、「區域選單」、「郵遞區號輸入框(選擇性)」</h3>
+
+        <p><code>
+        &lt;form id="myForm"&gt;
+            &lt;select id="county" name="county"&gt;&lt;/select&gt;
+            &lt;select id="district" name="district"&gt;&lt;/select&gt;
+            &lt;!-- 若不需使用郵遞區號欄位可刪除下列input或設type="hidden" --&gt;
+            &lt;!-- 若需允許修改則刪去readonly 屬性 --&gt;
+            &lt;input id="zip" name="zip" value="" type="text" placeholder="郵遞區號" readonly&gt;
+        &lt;/form&gt;
+        </code></p>
+
+        <h3>呼叫應用</h3>
+
+        <p>參數設定如下：
+        $(&lsquo;父元素&rsquo;).dk_tw_citySelector(&lsquo;縣市選單&rsquo;, &lsquo;區域選單&rsquo;, &lsquo;郵遞區號input&rsquo;);</p>
+
+        <p><code>
+        $(function() {
+            $('#myForm').dk_tw_citySelector('#county', '#district', '#zip');
+        });
+        </code></p>
+
+        <h2>進階使用</h2>
+
+        <h3>只顯示部分縣市選單</h3>
+
+        <p>(目前只限縣市，無法設定其下區域)</p>
+
+        <p>縣市選單加上 data-custom 屬性，並輸入要顯示的縣市名稱在其值中
+        ＊正確縣市名稱請依參照dk-tw-citySelector.js檔案</p>
+
+        <p>```</p>
+
+        <!-- 縣市選單只出現「台北市,台中市,高雄市」 -->
+
+        <p><select id="county" name="county" data-custom="台北市,台中市,高雄市"></select>
+        ```</p>
+
+        <h3>選單預設選定值</h3>
+
+        <p>選單加上 data-selected 屬性，並輸入要選定的縣市名稱在其值中
+        ＊正確縣市名稱請依參照dk-tw-citySelector.js檔案</p>
+
+        <p>```</p>
+
+        <!-- 縣市選單選定值為「台北市」 -->
+
+        <p><select id="county" name="county" data-selected="台北市"></select></p>
+
+        <!-- 區域選單選定值為「中山區」 -->
+
+        <p><select id="district" name="district" data-selected="中山區"></select></p>
+
+        <p>```</p>
+
+        <h3>備註</h3>
+
+        <p>上面兩種進階用法可同時設定。</p>
 
       </section>
     </div>
@@ -82,7 +177,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="dk-tw-citySelector.js"></script>
+    <script src="https://raw.githubusercontent.com/dennykuo/dk-tw-citySelector/master/dk-tw-citySelector.min.js"></script>
     <script>
     $(function() {
       $('#form-1').dk_tw_citySelector('#county-1', '#district-1', '#zip-1');
