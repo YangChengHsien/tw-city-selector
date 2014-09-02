@@ -1,0 +1,19 @@
+{
+  "name": "dk-tw-cityselector",
+  "version": "0.1.0",
+  "homepage": "http://dennykuo.github.io/dk-tw-citySelector",
+  "keywords": [
+    "dk",
+    "tw"
+  ],
+  "main": [
+    "dk-tw-citySelector.js"
+  ],
+  "ignore": [
+    ".git",
+    ".gitignore"
+  ],
+  "dependencies": {
+    "jquery": "~1"
+  }
+}

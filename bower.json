@@ -1,0 +1,14 @@
+{
+  "name": "dk-tw-citySelector-demo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dk-tw-cityselector": "~0.1.0"
+  }
+}
