@@ -125,7 +125,7 @@
             <select class="district form-control input-sm" name="district"></select>
           </div>
           <div class="form-group col-sm-2">
-            <input class="zip form-control input-sm" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+            <input class="zipcode form-control input-sm" name="zipcode" value="" type="text" placeholder="郵遞區號" readonly>
           </div>
         </form>
 
@@ -140,7 +140,7 @@
             <select class="district form-control input-sm" name="district" data-selected="中山區"></select>
           </div>
           <div class="form-group col-sm-2">
-            <input class="zip form-control input-sm" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+            <input class="zipcode form-control input-sm" name="zipcode" value="" type="text" placeholder="郵遞區號" readonly>
           </div>
         </form>
 
@@ -155,7 +155,7 @@
             <select class="district form-control input-sm" name="district"></select>
           </div>
           <div class="form-group col-sm-2">
-            <input class="zip form-control input-sm" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+            <input class="zipcode form-control input-sm" name="zipcode" value="" type="text" placeholder="郵遞區號" readonly>
           </div>
         </form>
 
@@ -170,7 +170,7 @@
             <select class="district form-control input-sm" name="district"></select>
           </div>
           <div class="form-group col-sm-2">
-            <input class="zip form-control input-sm" name="zip" value="" type="text" placeholder="郵遞區號" readonly>
+            <input class="zipcode form-control input-sm" name="zipcode" value="" type="text" placeholder="郵遞區號" readonly>
           </div>
         </form>
 
@@ -199,7 +199,7 @@ bower install dk-tw-cityselector --save
 </pre>
 <!-- /pre -->
 
-				<h4>- <a href="https://github.com/dennykuo/dk-tw-citySelector/archive/master.zip">下載檔案</a></h4>
+				<h4>- <a href="https://github.com/dennykuo/dk-tw-citySelector/archive/master.zipcode">下載檔案</a></h4>
 
       </div>
 
@@ -238,7 +238,7 @@ bower install dk-tw-cityselector --save
   &lt;select id="district" name="district"&gt;&lt;/select&gt;
   &lt;!-- 若不需使用郵遞區號欄位可刪除下列input或設type="hidden" --&gt;
   &lt;!-- 若需允許修改則刪去readonly 屬性 --&gt;
-  &lt;input id="zip" name="zip" value="" type="text" placeholder="郵遞區號" readonly&gt;
+  &lt;input id="zipcode" name="zipcode" value="" type="text" placeholder="郵遞區號" readonly&gt;
 &lt;/form&gt;
 </pre>
 <!-- /pre -->
@@ -254,10 +254,10 @@ bower install dk-tw-cityselector --save
 <pre class="prettyprint">
 $(function() {
   &lt;!-- 這樣可以 --&gt;
-  $('.wrapper').dk_tw_citySelector('.county', '.district', '.zip');
+  $('.wrapper').dk_tw_citySelector('.county', '.district', '.zipcode');
 
   &lt;!-- 這樣也可以 --&gt;
-  $('form').dk_tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zip"]');
+  $('form').dk_tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zipcode"]');
 });
 </pre>
 <!-- /pre -->
@@ -341,10 +341,10 @@ $(function() {
 <script src="assets/vendor/dk-tw-cityselector/dk-tw-citySelector.min.js"></script>
 <script>
 $(function() {
-  $('.form-1').dk_tw_citySelector('.county', '.district', '.zip');
-  $('.form-2').dk_tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zip"]');
-  $('.form-3').dk_tw_citySelector('.county', '.district', '.zip');
-  $('.form-4').dk_tw_citySelector('.county', '.district', '.zip');
+  $('.form-1').dk_tw_citySelector('.county', '.district', '.zipcode');
+  $('.form-2').dk_tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zipcode"]');
+  $('.form-3').dk_tw_citySelector('.county', '.district', '.zipcode');
+  $('.form-4').dk_tw_citySelector('.county', '.district', '.zipcode');
   prettyPrint();
 });
 </script>
