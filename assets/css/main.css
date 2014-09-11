@@ -208,3 +208,8 @@ FOOTER A
 		text-align: center;
 	}
 }
+
+/* bs fix */
+.input-sm {
+	padding: 6px;
+}
