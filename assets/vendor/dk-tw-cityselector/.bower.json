@@ -1,13 +1,14 @@
 {
   "name": "dk-tw-cityselector",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "http://dennykuo.github.io/dk-tw-citySelector",
   "keywords": [
     "dk",
     "tw"
   ],
   "main": [
-    "dk-tw-citySelector.js"
+    "dk-tw-citySelector.js",
+    "dk-tw-citySelector.min.js"
   ],
   "ignore": [
     ".git",
@@ -16,13 +17,13 @@
   "dependencies": {
     "jquery": "~1"
   },
-  "_release": "0.1.1",
+  "_release": "0.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.1.1",
-    "commit": "cf7873fbd739964ac5fd977cc3403b1abb691f67"
+    "tag": "0.2.0",
+    "commit": "530c08b332be0157981039a343951df3ac2728b5"
   },
   "_source": "git://github.com/dennykuo/dk-tw-citySelector.git",
-  "_target": "~0.1.0",
+  "_target": "~0",
   "_originalSource": "dk-tw-cityselector"
 }

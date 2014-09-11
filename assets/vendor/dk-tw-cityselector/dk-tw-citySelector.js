@@ -9,7 +9,7 @@ $.dk_tw_citySelector = {
     version : '0.0.1',
     debug : true,
     log : function() {
-        // $.dk_tw_citySelector.debug && window.console && console.log.apply(console, arguments);
+        // this.debug && window.console && console.log.apply(console, arguments);
     }
 };
 
@@ -22,8 +22,7 @@ $.dk_tw_citySelector = {
 
 ;(function($) {
     'use strict';
-
-    // 縣市下拉選單
+    
     $.fn.dk_tw_citySelector = function(selectFirst, selectSecond, selectThird) {
 
         // ----------------------------------------
@@ -36,7 +35,8 @@ $.dk_tw_citySelector = {
             '屏東縣','台東縣','花蓮縣','金門縣','連江縣','南海諸島','釣魚台列嶼'
         ];
 
-        var district = [
+        var district =
+        [
             // 台北市
             [
                 [ '中正區','大同區','中山區','松山區','大安區','萬華區','信義區','士林區',
@@ -249,8 +249,10 @@ $.dk_tw_citySelector = {
                 custom = custom.split(','); // 轉陣列                
             }
 
-            for (var i = 0, length = country.length; i < length; i++) {
-                if (typeof custom === 'object' && custom.indexOf(country[i]) === -1) {
+            for (var i = 0, j = country.length; i < j; i++) {
+
+                if ( typeof custom === 'object' && $.inArray( country[i], custom ) === -1 ) {
+                    // 因為ie8不支援 Array indexOf() Method，使用 $.inArray 替代處理
                     continue;
                 }
 
@@ -283,7 +285,7 @@ $.dk_tw_citySelector = {
                     $selectSecond.find('option:gt(0)').remove();
                     
                     // 產生第二選單的選項內容
-                    for(var i = 0; i <=  district[order][0].length - 1; i++) {
+                    for(var i = 0, j = district[order][0].length - 1; i <= j; i++) {
                         // <option value="中正區" data-zip="100">中正區</option>
                         $selectSecond.append('<option value="'+ district[order][0][i] +'" data-zip="'+ district[order][1][i] +'">'+ district[order][0][i] +'</option>');
                     }

@@ -12,6 +12,6 @@
     "modernizr": "~2",
     "html5shiv": "*",
     "respond": "*",
-    "dk-tw-cityselector": "~0.1.0"
+    "dk-tw-cityselector": "~0"
   }
 }
