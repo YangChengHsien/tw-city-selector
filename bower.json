@@ -2,13 +2,16 @@
   "name": "dk-tw-citySelector-demo",
   "private": true,
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "assets/vendor"
   ],
   "dependencies": {
+    "bootstrap": "~3",
+    "font-awesome": "~4",
+    "modernizr": "~2",
+    "html5shiv": "*",
+    "respond": "*",
     "dk-tw-cityselector": "~0.1.0"
   }
 }
